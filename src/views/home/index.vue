@@ -1,8 +1,6 @@
 <template>
   <div class="p-4">
     <div style="height: 300px" ref="chartRef" id="echarts"></div>
-  </div>
-  <div class="p-4">
     <div class="indoor" id="indoor">
       <div class="block_1">
         <div class="block_contianer">多功能会议室</div>
@@ -51,19 +49,23 @@ function init() {
     }
     serie.name = legendData[i]
     serie.data = metaDate[i]
-    console.log(legendData[i], '...legendData...')
     serieData.push(serie)
+    serie.barGap = '0'
   }
 
   //个性化配置
   option.tooltip.formatter = function (params) {
     params['units'] = ['件', '条']
-    return option.tooltip.formatter(params)
+    return echartUtil.getEchartOption().tooltip.formatter(params)
   }
+  option.tooltip.textStyle.color = '#57617B'
   option.yAxis.name = '单位：数量'
   option.xAxis.data = xAxisData
   option.legend.data = legendData
   option.series = serieData
+  option.legend = {
+    top: 'bottom'
+  }
   //图表设置配置
   setOptions({ ...option })
 }
@@ -120,8 +122,11 @@ function init() {
 
     .svg_4 {
       position: absolute;
-      box-sizing: border-box;
-      border: 1px solid pink;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
   }
 }

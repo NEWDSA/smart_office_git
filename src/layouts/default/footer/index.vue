@@ -1,13 +1,7 @@
 <template>
   <Footer :class="prefixCls" v-if="getShowLayoutFooter" ref="footerRef">
-    <div :class="`${prefixCls}__links`">
-      <a @click="openWindow(SITE_URL)">{{ t('layout.footer.onlinePreview') }}</a>
-
-      <GithubFilled @click="openWindow(GITHUB_URL)" :class="`${prefixCls}__github`" />
-
-      <a @click="openWindow(DOC_URL)">{{ t('layout.footer.onlineDocument') }}</a>
-    </div>
-    <div>Copyright &copy;2020 Vben Admin</div>
+    <div :class="`${prefixCls}__links`"> </div>
+    <div>Copyright &copy;2022 广东智联蔚来科技有限公司</div>
   </Footer>
 </template>
 

@@ -58,7 +58,7 @@ export default class EchartUtil {
         axisPointer: { type: 'shadow' }, // 坐标轴指示器配置项。
         textStyle: {
           // 提示框浮层的文本样式。
-          color: '#FFF', // 文字的颜色。
+          color: '#fff', // 文字的颜色。
           fontSize: 10, // 文字的字体大小。
           fontFamily: 'STHeiti' // 文字的字体系列。
         },
@@ -69,6 +69,7 @@ export default class EchartUtil {
           }
           let html = params[0].name + '<br>'
           for (let i = 0; i < params.length; i++) {
+            console.log(params[i].color, 'color')
             html +=
               '<span style="display:inline-block;margin-right:10px;border-radius:10px;width:10px;height:10px;background-color:' +
               params[i].color +
@@ -126,6 +127,7 @@ export default class EchartUtil {
 
             //换行操作，k：每行显示个数
             let i = 0,
+              // eslint-disable-next-line prefer-const
               k = 4
             let newParams = ''
             for (let char of params + '') {
