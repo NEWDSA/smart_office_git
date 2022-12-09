@@ -4,6 +4,7 @@
 export default class EchartUtil {
   //公用配置
   public static getEchartOption() {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const echartUtil = this
     return {
       grid: {
